@@ -1,0 +1,32 @@
+
+server:
+  port: 8080
+
+#3.1.1 之前的版本需要在此处添加配置
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*
+  global-config:
+    sql-parser-cache: true
+
+
+spring:
+  datasource:
+    druid:
+      db-type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name:  dm.jdbc.driver.DmDriver
+      url: jdbc:dm://localhost:5237
+      username: SYSDBA
+      password: password2
+#spring:
+#  datasource:
+#    driver-class-name: dm.jdbc.driver.DmDriver
+#    url: jdbc:dm://127.0.0.1:5237/PRODUCTION?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai&useSSL=true&characterEncoding=UTF-8
+#    # springboot2.0整合了hikari ,据说这是目前性能最好的java数据库连接池
+#    username: SYSDBA
+#    password: password2
+#    hikari:
+#      idle-timeout: 60000
+#      maximum-pool-size: 30
+#      minimum-idle: 10
+#      max-lifetime: 30000
+#      connection-test-query: SELECT 1
