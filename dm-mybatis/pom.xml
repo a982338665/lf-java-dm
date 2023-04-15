@@ -27,15 +27,16 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/junit-4.10.jar</systemPath>
+            <version>4.10</version>
+<!--            <scope>system</scope>-->
+<!--            <systemPath>${project.basedir}/lib/junit-4.10.jar</systemPath>-->
         </dependency>
         <dependency>
             <groupId> org.mybatis</groupId>
             <artifactId>mybatis</artifactId>
             <version>3.4.4</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/mybatis-3.4.4.jar</systemPath>
+<!--            <scope>system</scope>-->
+<!--            <systemPath>${project.basedir}/lib/mybatis-3.4.4.jar</systemPath>-->
         </dependency>
     </dependencies>
 
