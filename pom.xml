@@ -23,6 +23,7 @@
     <modules>
         <module>dm-jdbc</module>
         <module>dm-mybatis</module>
+        <module>dm-mybatis-plus</module>
         <module>dm-jpa</module>
         <module>dm-ibatis</module>
     </modules>

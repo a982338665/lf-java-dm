@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--&lt;!&ndash; 引入db.properties文件 &ndash;&gt;-->
+    <properties resource="jdbc.properties"></properties>
+    <!--配置接口-->
+    <typeAliases>
+        <package name="com.dao"/>
+    </typeAliases>
+    <!-- 配置mybatis运行环境-->
+    <environments default="development">
+        <environment id="development">
+            <!-- 配置事务管理，采用JDBC的事务管理 -->
+            <transactionManager type="JDBC"/>
+            <!-- POOLED:mybatis自带的数据源，JNDI：基于Tomcat的数据源 -->
+            <!--使用DB.properties-->
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <!-- 将mapper文件加入到配置文件中  mapper文件是  写sql语句的文件 -->
+    <mappers>
+        <!-- 这里如果是配置文件用/ -->
+        <mapper resource="mapper/ProductCategoryMapper.xml"/>
+        <mapper resource="mapper/BigDataMapper.xml"/>
+    </mappers>
+</configuration>
