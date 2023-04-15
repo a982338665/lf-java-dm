@@ -25,6 +25,7 @@
         <module>dm-mybatis</module>
         <module>dm-mybatis-plus-spring</module>
         <module>dm-mybatis-plus-springboot</module>
+        <module>dm-mybatis-plus-springboot-druid</module>
         <module>dm-mybatis-plus</module>
         <module>dm-ibatis</module>
     </modules>
