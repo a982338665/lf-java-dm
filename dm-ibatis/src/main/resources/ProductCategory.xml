@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+"http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="ProductCategory">
+<typeAlias alias="ProductCategory" type="dameng.pojo.ProductCategory"/>
+<!-- <statement id="createUser">
+create table t_user( id int identity(1,1),name varchar(100),sex int)
+</statement> -->
+
+<resultMap class="dameng.pojo.ProductCategory" id="ProductCategory">
+        <result property="productCategoryId" column="PRODUCT_CATEGORYID"/>
+        <result property="name" column="NAME"/>
+</resultMap>
+<!--根据ID查询指定信息-->
+<!--有参数   有返回值-->
+<select id="selectProductCategoryById" parameterClass="java.lang.Integer" resultMap="ProductCategory">
+	select * from 
+	PRODUCTION.PRODUCT_CATEGORY 
+	WHERE PRODUCT_CATEGORYID = #productCategoryId#;
+</select>
+<!--查询总条数-->
+<select id="selectCount" resultClass="java.lang.Integer">
+   	select count(*) from PRODUCTION.PRODUCT_CATEGORY;
+</select>
+<!--parameterType 参数类型 -->
+<!--resultType 返回结果集类型 -->
+<!--查询所有数据-->
+<select id="selectAll" resultMap="ProductCategory">
+  	select * from PRODUCTION.PRODUCT_CATEGORY;
+</select>
+<!--插入信息   -->
+<insert id="insertProductCategory" parameterClass="ProductCategory" >
+    INSERT into PRODUCTION.PRODUCT_CATEGORY(name)VALUES (
+      #name#
+    );
+</insert>
+<!--根据id删除信息-->
+<delete id="deleteById" parameterClass="int">
+    delete from PRODUCTION.PRODUCT_CATEGORY where PRODUCT_CATEGORYID = #productCategoryId#;
+</delete>
+<!--根据id修改信息-->
+<update id="updateProductCategory" parameterClass="dameng.pojo.ProductCategory">
+    update PRODUCTION.PRODUCT_CATEGORY set NAME = #name#
+    where PRODUCT_CATEGORYID = #productCategoryId#
+</update>
+<!-- <statement id="dropUser">
+drop table t_user
+</statement> -->
+</sqlMap>
+

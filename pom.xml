@@ -22,6 +22,9 @@
 
     <modules>
         <module>dm-jdbc</module>
+        <module>dm-mybatis</module>
+        <module>dm-jpa</module>
+        <module>dm-ibatis</module>
     </modules>
     <dependencyManagement>
         <dependencies>
@@ -29,6 +32,11 @@
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>1.18.24</version>
+            </dependency>
+            <dependency>
+                <groupId>com.dameng</groupId>
+                <artifactId>DmJdbcDriver18</artifactId>
+                <version>8.1.1.193</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

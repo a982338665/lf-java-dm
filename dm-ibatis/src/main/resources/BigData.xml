@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+"http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="BigData">
+<typeAlias alias="BigData" type="dameng.pojo.BigData"/>
+<!-- <resultMap class="com.damengng.BigDate" id="BigDate">
+        <result property="productCategoryId" column="PRODUCT_CATEGORYID"/>
+        <result property="name" column="NAME"/>
+</resultMap> -->
+<!--parameterClass 参数类型 -->
+<!--resultClass 返回结果集映射 -->
+<!--查询所有数据-->
+<select id="selectAllBigData" resultClass="BigData">
+  	select * from PRODUCTION.BIG_DATA;
+</select>
+<!--插入信息   -->
+<insert id="insertBigData" parameterClass="BigData" >
+    INSERT into PRODUCTION.BIG_DATA(photo,describe,txt)VALUES (
+      #photo#,#describe#,#txt#
+    );
+</insert>
+</sqlMap>
+
