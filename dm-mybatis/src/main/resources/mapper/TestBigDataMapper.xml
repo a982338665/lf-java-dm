@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--命名空间  会映射到 接口-->
+<mapper namespace="dameng.dao.TestBigDataMapper">
+    <!--parameterType 参数类型 -->
+    <!--resultType 返回结果集类型 -->
+    <!--查询所有数据-->
+    <select id="SelectFromTestBigDate" resultType="dameng.pojo.TestBigData">
+      select * from PRODUCTION2.BIG_DATA;
+    </select>
+    <!--插入信息   -->
+    <insert id="InsertIntoTestBigDate" parameterType="dameng.pojo.TestBigData" >
+        INSERT into PRODUCTION2.BIG_DATA(photo,describe,txt)VALUES (
+        	#{photo},#{describe},#{txt}
+        );
+    </insert>
+</mapper>

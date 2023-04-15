@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- <!– 引入 db.properties 文件 –> -->
+    <properties resource="jdbc.properties"/>
+    <!-- 配置 mybatis 运行环境-->
+    <environments default="development">
+        <environment id="development">
+            <!-- 配置事务管理，采用 JDBC 的事务管理 -->
+            <transactionManager type="JDBC" />
+            <!-- POOLED:mybatis 自带的数据源，JNDI：基于 Tomcat 的数据源 -->
+            <!--使用 DB.properties-->
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <!-- 将 mapper 文件加入到配置文件中 mapper 文件是写 SQL 语句的文件 -->
+    <mappers>
+        <!--普通数据的增删改查/-->
+        <mapper resource="mapper/ProductCategoryMapper.xml" />
+        <!--大字段的操作/-->
+        <mapper resource="mapper/TestBigDataMapper.xml" />
+    </mappers>
+</configuration>
